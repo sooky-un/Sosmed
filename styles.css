@@ -1,0 +1,259 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6ecf0;
+    color: #14171a;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e6ecf0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #1da1f2;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #14171a;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a i {
+    margin-right: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    margin-top: 60px; /* To prevent overlap with fixed navbar */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    flex: 1;
+    max-width: 250px;
+    display: block;
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #14171a;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    transition: background 0.2s;
+}
+
+.sidebar nav a:hover {
+    background-color: #e8f5fe;
+}
+
+.sidebar nav a i {
+    margin-right: 15px;
+}
+
+/* Feed Styles */
+.feed {
+    flex: 2;
+    margin: 0 20px;
+}
+
+.tweet-box {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.tweet-box .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.tweet-box textarea {
+    flex: 1;
+    border: none;
+    resize: none;
+    font-size: 16px;
+}
+
+.tweet-box textarea:focus {
+    outline: none;
+}
+
+.tweet-box button {
+    background-color: #1da1f2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.tweet-box button:hover {
+    background-color: #0d95e8;
+}
+
+.tweet {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.tweet .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.tweet-content {
+    flex: 1;
+}
+
+.tweet-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.tweet-header h3 {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.tweet-header span {
+    color: #657786;
+    font-size: 14px;
+}
+
+.tweet-content p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.tweet-actions a {
+    margin-right: 15px;
+    color: #657786;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.tweet-actions a:hover {
+    color: #1da1f2;
+}
+
+/* Widgets Styles */
+.widgets {
+    flex: 1;
+    max-width: 300px;
+    display: block;
+}
+
+.search-box {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #f5f8fa;
+}
+
+.search-box input::placeholder {
+    color: #657786;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar, .widgets {
+        max-width: 100%;
+    }
+
+    .feed {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 60px;
+        left: -250px;
+        height: 100%;
+        background-color: #ffffff;
+        width: 250px;
+        transition: left 0.3s;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    .widgets {
+        display: none;
+    }
+}
